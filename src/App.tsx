@@ -1,8 +1,12 @@
 import React from "react";
-import Logo from "./components/Header/components/Logo/Logo";
+import Header from "./components/Header/Header";
 
 const App: React.FC = () => {
-  return <Logo />;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default App;
