@@ -1,21 +1,37 @@
-import React from "react";
+import styled from "styled-components";
 import Logo from "./components/Logo/Logo";
-import ButtonUsage from "../../common/Button/Button";
-import { Container } from "@mui/material";
+import ButtonLogin from "../../common/Button/Button";
+
+const StyledHeader = styled.header`
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: var(--white, #fff);
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 150%;
+  justify-content: space-between;
+  padding: 14px 34px;
+  /* Remove extra padding from original code */
+
+  @media (max-width: 991px) {
+    max-width: 100%;
+    flex-wrap: wrap;
+    white-space: initial;
+    padding: 14px 20px; /* Adjust padding for mobile */
+  }
+`;
 
 const Header = () => {
   return (
-    <header
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: 16,
-      }}
-    >
+    <StyledHeader>
       <Logo />
-      <ButtonUsage />
-    </header>
+      <ButtonLogin />
+    </StyledHeader>
   );
 };
 
