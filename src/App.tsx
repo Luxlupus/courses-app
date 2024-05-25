@@ -1,11 +1,12 @@
 import React from "react";
-import Header from "./components/Header/Header";
+import HeaderLayout from "./components/Header/Header";
 import CourseCards from "./components/Courses/components/CourseCard/CourseCards";
+import "../src/App.css";
 
 const App: React.FC = () => {
   return (
     <>
-      <Header />
+      <HeaderLayout />
       <CourseCards />
     </>
   );

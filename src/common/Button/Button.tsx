@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
-const StyledLoginButton = styled.button`
-  font-family:
-    Open Sans,
+const Button = styled.button`
+  font:
+    700 16px/100% Open Sans,
     sans-serif;
-  justify-content: center;
-  border-radius: 4px;
+  color: var(--white, #fff);
   background-color: var(--primary-blue, #007298);
-  padding: 13px 36px;
+  border-radius: 4px;
+  padding: 13px 32px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+
   @media (max-width: 991px) {
-    white-space: initial;
-    padding: 0 20px;
+    padding: 0px 20px;
   }
 `;
 
-const ButtonLogin = () => {
-  return <StyledLoginButton>LOGIN</StyledLoginButton>;
-};
-
-export default ButtonLogin;
+export default Button;
