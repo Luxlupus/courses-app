@@ -16,13 +16,12 @@ const Header = styled.header`
   line-height: 150%;
   justify-content: space-between;
   padding: 14px 34px;
-  /* Remove extra padding from original code */
 
   @media (max-width: 991px) {
     max-width: 100%;
     flex-wrap: wrap;
     white-space: initial;
-    padding: 14px 20px; /* Adjust padding for mobile */
+    padding: 14px 20px;
   }
 `;
 

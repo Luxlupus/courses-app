@@ -14,7 +14,7 @@ const Button = styled.button`
   border: none;
 
   @media (max-width: 991px) {
-    padding: 0px 20px;
+    padding: 5px 20px;
   }
 `;
 

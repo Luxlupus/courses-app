@@ -3,6 +3,7 @@ import CourseCard from "./CourseCard";
 import { mockedCoursesList } from "../../../../constants";
 import { CoursesList } from "../../../../types";
 import styled from "styled-components";
+import { Course } from "../../../../types";
 
 const MainContainer = styled.div`
   background-color: #f7f7f7;

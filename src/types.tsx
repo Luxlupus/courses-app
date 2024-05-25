@@ -7,4 +7,13 @@ export interface Course {
   authors: string[];
 }
 
+export interface Authors {
+  id: string;
+  name: string;
+}
+
+export interface CourseCardProps {
+  course: Course;
+}
 export type CoursesList = Array<Course>;
+export type AuthorsList = Array<Authors>;

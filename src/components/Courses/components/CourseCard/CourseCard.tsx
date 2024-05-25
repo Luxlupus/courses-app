@@ -1,12 +1,9 @@
 import React from "react";
-import { Course } from "../../../../types";
+import { CourseCardProps } from "../../../../types";
 import { getCourseDuration } from "../../../../helpers/getCourseDuration";
 import styled from "styled-components";
 import Button from "../../../../common/Button/Button";
-
-interface CourseCardProps {
-  course: Course;
-}
+import { getAuthorsName } from "../../../../helpers/getAuthorsName";
 
 const CourseWrapper = styled.div`
   border-left: 1rem solid #2e2e2e;
@@ -78,10 +75,9 @@ const AuthorInfoText = styled.p`
     400 16px/20px Open Sans,
     sans-serif;
   color: var(--primary-efx-dark, #333e48);
-
-  strong {
-    font-weight: 700;
-  }
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
@@ -93,7 +89,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
       </CourseInfoContainer>
       <AuthorInfoContainer>
         <AuthorInfoText>
-          <strong>Authors:</strong> {course.title} <br />
+          <strong>Authors:</strong> {getAuthorsName(course.authors)} <br />
           <strong>Duration:</strong> {getCourseDuration(course.duration)} <br />
           <strong>Created:</strong> {course.creationDate}
         </AuthorInfoText>
