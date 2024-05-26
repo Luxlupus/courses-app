@@ -1,15 +1,18 @@
-import React from "react";
 import { CourseCardProps } from "../../../../types";
 import { getCourseDuration } from "../../../../helpers/getCourseDuration";
 import styled from "styled-components";
 import Button from "../../../../common/Button/Button";
 import { getAuthorsName } from "../../../../helpers/getAuthorsName";
+import { formatCreationDate } from "../../../../helpers/formatCreationDate";
 
 const CourseWrapper = styled.div`
   border-left: 1rem solid #2e2e2e;
   border-radius: 1%;
   display: flex;
-  margin-top: 5rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+  background-color: #ffffff;
 
   @media (max-width: 991px) {
     flex-direction: column;
@@ -22,10 +25,8 @@ const CourseInfoContainer = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 80%;
+  width: 70%;
   filter: drop-shadow(2px 0px 8px rgba(0, 0, 0, 0.25));
-  padding: 2rem;
-
   @media (max-width: 991px) {
     width: 90%;
   }
@@ -68,7 +69,6 @@ const AuthorInfoContainer = styled.section`
     padding: 1.5rem;
   }
 `;
-
 const AuthorInfoText = styled.p`
   margin: 0;
   font:
@@ -78,6 +78,11 @@ const AuthorInfoText = styled.p`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  line-height: 1.5rem;
+
+  strong {
+    font-weight: 700;
+  }
 `;
 
 const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
@@ -91,7 +96,7 @@ const CourseCard: React.FC<CourseCardProps> = ({ course }) => {
         <AuthorInfoText>
           <strong>Authors:</strong> {getAuthorsName(course.authors)} <br />
           <strong>Duration:</strong> {getCourseDuration(course.duration)} <br />
-          <strong>Created:</strong> {course.creationDate}
+          <strong>Created:</strong> {formatCreationDate(course.creationDate)}
         </AuthorInfoText>
         <Button>SHOW COURSE</Button>
       </AuthorInfoContainer>

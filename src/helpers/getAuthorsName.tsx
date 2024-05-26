@@ -1,6 +1,5 @@
 import { mockedCoursesList } from "../constants";
 import { mockedAuthorsList } from "../constants";
-import { CoursesList, AuthorsList, CourseCardProps } from "../types";
 
 export function getAuthorsName(authorID: string[]): string {
   const authorsMap = new Map<string, string>();
